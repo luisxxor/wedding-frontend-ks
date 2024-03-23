@@ -19,7 +19,9 @@ const familyName = ref('');
 const guestNames = ref<string[]>([]);
 
 onMounted(async () => {
-  loadPage.value = true
+  setTimeout(() => {
+    loadPage.value = true
+  }, 2000);
 });
 
 </script>
