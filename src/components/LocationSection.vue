@@ -10,23 +10,6 @@
             :locationMap="location.locationMap"
         />
 
-        <div class="invitations-container">
-            <div class="invitations-icon-container">
-                <img :src="invitations" alt="Invitaciones" />
-            </div>
-
-            <div class="invitations-title">
-                {{ invitationsTitle }}
-            </div>
-            <div class="invitations-text">
-                <ul>
-                    <li v-for="guest in guests" :key="guest">
-                        {{ guest }}
-                    </li>
-                </ul>
-            </div>
-        </div>
-
         <div class="dressing-container">
             <div class="dressing-icon-container">
                 <img :src="dressingIcon" alt="Vestimenta" />
@@ -68,32 +51,16 @@
     import hoops1 from '@/assets/svg/hoops-1.svg';
     import hoops2 from '@/assets/svg/hoops-2.svg';
     import hoops3 from '@/assets/svg/hoops-3.svg';
-    import invitations from '@/assets/svg/invitations.svg';
-    import { defineProps, computed } from 'vue';
 
     const locations = [
         {
             locationIcon: churchIcon,
-            locationTime: 'de 12:30pm a 2:00pm',
+            locationTime: 'desde las 6:00 pm',
             locationEventName: 'Ceremonia',
-            locationName: 'Iglesia Evangélica Libre Ebenezer',
-            locationMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d256.7544017574819!2d-67.33615267359657!3d10.228815917053296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a9e7c3731c853%3A0x11f1f0db5d1b5939!2sIglesia%20Evang%C3%A9lica%20Libre%20Ebenezer!5e0!3m2!1ses-419!2sve!4v1680963468029!5m2!1ses-419!2sve'
-        },
-        {
-            locationIcon: partyIcon,
-            locationTime: 'desde las 2:00pm',
-            locationEventName: 'Salón',
-            locationName: 'Salón de Fiestas Zamora Eventos',
-            locationMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d490.80291053790995!2d-67.3246683!3d10.2274044!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a9f8b904bed63%3A0x4ea5e795c8929c23!2sZamora%20Eventos%2C%20La%20Victoria!5e0!3m2!1ses-419!2sve!4v1680962511441!5m2!1ses-419!2sve'
+            locationName: 'Y\'s Recepciones & Eventos',
+            locationMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d554.1693044361705!2d-77.06173103968294!3d-12.002002592819382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cfdefeb01b3b%3A0x4b6ecee14197402d!2sY&#39;s%20Recepciones%20%26%20Eventos!5e0!3m2!1ses-419!2spe!4v1711221529183!5m2!1ses-419!2spe'
         }
     ]
-
-    const props = defineProps<{
-        familyName: string,
-        guests: string[],
-    }>();
-
-    const invitationsTitle = computed(() => props.familyName ? props.familyName : 'Invitados');
 </script>
 
 <style>
@@ -114,7 +81,7 @@
         z-index: 2;
     }
 
-    .dressing-container, .invitations-container {
+    .dressing-container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -122,47 +89,16 @@
         z-index: 2;
     }
 
-    .invitations-container {
-        margin-bottom: 3em;
-    }
-
-    .invitations-icon-container {
-        margin-left: 0.7em;
-    }
-
-    .dressing-icon-container > img, .invitations-icon-container > img {
+    .dressing-icon-container > img {
         height: 50px;
     }
 
-    .dressing-title, .invitations-title {
+    .dressing-title {
         font-family: 'Great Vibes', cursive;
         font-size: 2rem;
         line-height: .5;
     }
 
-    .invitations-title {
-        line-height: 1.2;
-        text-align: center;
-        margin-top: 0.6rem;
-    }
-
-    .invitations-text {
-        margin-top: 0.6rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        letter-spacing: 2px;
-        width: 100%;
-        text-align: center;
-        border: 4px #d7aa41;
-        border-style: double;
-        padding: 0.6rem 0;
-    }
-
-    .invitations-text > ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
 
     .dressing-text {
         font-family: 'Roboto', sans-serif;
@@ -218,7 +154,7 @@
     }
 
     @media (min-width: 768px) {
-        .dressing-title, .invitations-title {
+        .dressing-title {
             font-size: 2.5rem;
         }
 
@@ -232,24 +168,12 @@
             letter-spacing: 3px;
         }
 
-        .invitations-icon-container > img {
-            height: 70px;
-        }
-
         .dressing-icon-container > img {
             height: 90px;
         }
 
         .dressing-container {
             margin-bottom: 3em;
-        }
-
-
-        .invitations-text {
-            font-size: 1.2rem;
-            line-height: 2rem;
-            letter-spacing: 3px;
-            width: 608px;
         }
     }
 

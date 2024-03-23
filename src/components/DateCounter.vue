@@ -3,18 +3,18 @@
         <div class="date-container">
             <span class="dayName text-center">
                 <span class="dateComponent-text">
-                    Sábado
+                    Viernes
                 </span>
             </span>
             <span class="day text-center">
-                <img :src="dayNumber" alt="17" />
+                26
             </span>
             <span class="month text-center">
                 <span class="dateComponent-text">
-                    Junio
+                    Abril
                 </span>
             </span>
-            <span class="year text-center">2023</span>
+            <span class="year text-center">2024</span>
         </div>
         <div class="counter-container">
             <div class="daysCounterContainer box-container">
@@ -70,12 +70,14 @@
 .day {
   grid-column: 2 / 3; /* place in column 2 */
   grid-row: 1 / 2; /* place in row 1 */
-}
-
-.day img {
-  width: 100%;
-  height: 4rem;
+  background: rgb(126,77,34);
+  background: linear-gradient(0deg, rgba(126,77,34,1) 7%, rgba(205,158,50,1) 31%, rgba(247,242,142,1) 53%, rgba(229,209,110,1) 61%, rgba(208,167,70,1) 71%, rgba(200,152,55,1) 77%, rgba(124,80,33,1) 97%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   filter: drop-shadow(2px 3px 3px rgb(0 0 0 / 0.9));
+  font-size: 4em;
+  font-family: 'Alkatra', cursive;
 }
 
 .month {
@@ -176,7 +178,6 @@
 import { computed, ref } from 'vue';
 import { format, differenceInDays, differenceInHours, differenceInMinutes, differenceInSeconds } from 'date-fns';
 import { defineProps } from 'vue';
-import dayNumber from '@/assets/svg/day-number.svg';
 import dayContainer from '@/assets/svg/dayContainer.svg';
 import hourContainer from '@/assets/svg/hourContainer.svg';
 import minuteContainer from '@/assets/svg/minuteContainer.svg';
@@ -185,7 +186,7 @@ import secondContainer from '@/assets/svg/secondContainer.svg';
 // Define prop screenHeight
 defineProps<{ statusBarHeight: number }>();
 
-const date = ref(new Date(2023, 5, 17, 12, 30, 0));
+const date = ref(new Date(2024, 3, 26, 18, 0, 0));
 const currentDate = ref(new Date());
 
 const dayName = computed(() => format(date.value, 'EEEE'));

@@ -7,20 +7,11 @@
             {{ locationTime }}
         </div>
         <div class="location-event-name">
-            {{ locationEventName }}
-        </div>
-        <div class="location-name">
             {{ locationName }}
         </div>
 
         <div class="location-map">
-            <iframe
-                :src="locationMap"
-                style="border:0;"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d554.1693044361705!2d-77.06173103968294!3d-12.002002592819382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cfdefeb01b3b%3A0x4b6ecee14197402d!2sY&#39;s%20Recepciones%20%26%20Eventos!5e0!3m2!1ses-419!2spe!4v1711221529183!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </template>
@@ -77,7 +68,7 @@ const props = defineProps<{
     .location-event-name {
         font-family: 'Great Vibes', cursive;
         font-size: 2rem;
-        line-height: 1;
+        line-height: 2;
     }
 
     .location-item-container {

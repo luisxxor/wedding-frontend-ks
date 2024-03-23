@@ -1,9 +1,9 @@
 #app {
   max-width: 768px;
   margin: 0 auto;
-  padding: calc(1em - env(safe-area-inset-top)) 1em calc(1em - env(safe-area-inset-bottom));
+  padding: calc(1em - env(safe-area-inset-top)) 1em calc(0.5em - env(safe-area-inset-bottom));
   background-color: white;
-
+  margin-bottom: 1.5em;
   font-weight: normal;
 }
 

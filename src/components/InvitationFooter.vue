@@ -3,44 +3,80 @@
         '--floral-footer': `url(${floralFooter})`,
     }">
         <div class="card">
-            <div class="title">
-                Confirma tu asistencia
+            <div class="verse-text">
+                <p>
+                    {{ verse }}
+                </p>
             </div>
-            <div class="text">
-                ¡Queremos contar contigo en nuestra boda! Por favor, confirmanos tu asistencia vía WhatsApp.
-            </div>
-            <div class="contacts">
-                <div class="contact">
-                    <div class="contact-name">
-                        Luis
-                    </div>
-                    <a class="contact-button" :href="contactUrlLuis">
-                        Enviar mensaje
-                    </a>
-                </div>
-                <div class="space-divider">
-                    <!-- whatsapp icon -->
-                    <img :src="whatsappIcon" alt="whatsapp icon" class="whatsapp-icon" />
-                </div>
-                <div class="contact">
-                    <div class="contact-name">
-                        Mariana
-                    </div>
-                    <a class="contact-button" :href="contactUrlMariana">
-                        Enviar mensaje
-                    </a>
-                </div>
+            <div class="verse-ref hidden" ref="verseRef" @click="writeText">
+                <p>
+                    1 Corintios 13:4-8
+                </p>
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-    import whatsappIcon from '@/assets/svg/whatsapp-icon.svg';
     import floralFooter from '@/assets/floral-footer.webp';
- 
-    const contactUrlLuis = `https://api.whatsapp.com/send?phone=584242350991&text=Hola%20Luis!%20confirmo%20mi%20asistencia%20a%20la%20boda%20%F0%9F%98%8A`
-    const contactUrlMariana = `https://api.whatsapp.com/send?phone=51946448464&text=Hola%20Mariana!%20confirmo%20mi%20asistencia%20a%20la%20boda%20%F0%9F%98%8A`
+    import { ref, onMounted } from 'vue';
+
+    const verse = ref('')
+    const verseRef = ref<HTMLElement | null>(null);
+
+
+    const writeText = async () => {
+        const verseSource = `El amor es sufrido, es benigno; el amor no tiene envidia, el amor no es jactancioso, no se envanece; no hace nada indebido, no busca lo suyo, no se irrita, no guarda rencor; no se goza de la injusticia, mas se goza de la verdad. Todo lo sufre, todo lo cree, todo lo espera, todo lo soporta. El amor nunca deja de ser; pero las profecías se acabarán, y cesarán las lenguas, y la ciencia acabará.`;
+
+        while (verse.value.length < verseSource.length) {
+            verse.value += verseSource[verse.value.length];
+
+            let waitingTime = 50;
+
+            if (['.', ',', ';'].includes(verse.value[verse.value.length - 1])) {
+                waitingTime = 500;
+            }
+
+            await wait(waitingTime);
+        }
+
+        setTimeout(() => {
+            let $el = verseRef.value
+
+            if ($el instanceof Element) {
+                $el.classList.remove('hidden');
+            }
+            
+        }, 500);
+    }
+
+    const wait = async (ms: number) => {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    onMounted(() => {
+        if  (verseRef.value === null) {
+            return;
+        }
+
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5,
+        };
+
+        const callback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    writeText();
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, options);
+
+        observer.observe(verseRef.value);
+    });
 </script>
 
 <style scoped>
@@ -60,6 +96,10 @@
     flex-direction: column;
     text-align: center;
     z-index: 2;
+}
+
+.card > * {
+    font-style: italic;
 }
 
 .contacts {
@@ -206,7 +246,7 @@
         top: -183px;
     }
     .footer-container::after {
-        bottom: -179px;
+        bottom: -162px;
     }
 }
 </style>

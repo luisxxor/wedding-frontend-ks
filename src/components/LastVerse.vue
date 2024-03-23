@@ -1,15 +1,5 @@
 <template>
     <div class="lastVerseContainer">
-        <div class="verse-text">
-            <p>
-                {{ verse }}
-            </p>
-        </div>
-        <div class="verse-ref hidden" ref="verseRef" @click="writeText">
-            <p>
-                1 Corintios 13:4-8
-            </p>
-        </div>
     </div>
 </template>
 

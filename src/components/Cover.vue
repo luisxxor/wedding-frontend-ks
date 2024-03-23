@@ -7,21 +7,21 @@
         }"
     >
         <div class="verse text-center animate__animated animate__fadeInDown animate__delay-1s animate__slow">
-            El que no ama no ha conocido a Dios, porque Dios es amor.
+            El que halla esposa halla el bien, y alcanza la benevolencia de Jehová.
 
-            <span class="verse-ref">1 Juan 4:8</span>
+            <span class="verse-ref">Proverbios 18:22</span>
         </div>
 
-        <div class="floral-hoop-container animate__animated animate__zoomIn animate__delay-2s animate__slow">
+        <div class="floral-hoop-container animate__animated animate__zoomIn animate__delay-3s animate__slow">
             <img v-show="!floralHoopLoaded" class="floral-hoop" :src="floralHoopThumbnail" alt="Floral hoop">
             <img v-show="floralHoopLoaded" class="floral-hoop" :src="floralHoop" alt="Floral hoop" @load="floralHoopLoaded = true" />
         </div>
 
         <div class="footer text-center">
-            <div class="footer-message animate__animated animate__bounceIn animate__delay-3s animate__slow">
+            <div class="footer-message animate__animated animate__bounceIn animate__delay-5s animate__slow">
                 Tenemos el honor de invitarte a nuestra boda.
             </div>
-            <div class="coverImageContainer animate__animated animate__flipInX animate__delay-4s animate__slow">
+            <div class="coverImageContainer animate__animated animate__zoomIn animate__slow" style="animation-delay: 7s;">
                 <img
                     v-show="!coverImageLoaded"
                     class="coverImage"
@@ -128,7 +128,7 @@ const height = computed(() => (props.statusBarHeight && props.statusBarHeight > 
     max-width: 100%;
     height: auto;
     object-fit: cover;
-    max-height: 150px;
+    max-height: 250px;
     width: 100%;
 }
 
@@ -172,6 +172,16 @@ const height = computed(() => (props.statusBarHeight && props.statusBarHeight > 
     background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23ffffff"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23ffffff"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23ffffff"/></svg>'); 
 }
 
+@media (min-width:425px){
+    .coverImage {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: 490px;
+        width: 100%;
+    }
+}
+
 @media (min-width:768px){
     .coverImageContainer::before{
         background-size: 112% 32px;
@@ -183,7 +193,7 @@ const height = computed(() => (props.statusBarHeight && props.statusBarHeight > 
     }
 
     .coverImage {
-        max-height: 50vh;
+        max-height: 590px;
     }
 
     .verse {

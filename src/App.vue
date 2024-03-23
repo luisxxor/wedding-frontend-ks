@@ -19,23 +19,6 @@ const familyName = ref('');
 const guestNames = ref<string[]>([]);
 
 onMounted(async () => {
-  // Get queryParam from url
-  const urlParams = new URLSearchParams(window.location.search);
-  const invitationId = urlParams.get('i');
-  const response = await axios.get<Guest[]>(import.meta.env.VITE_WEDDING_INFO_LAMBDA_URL, {
-    params: {
-      invitationId,
-    }
-  });
-
-  if (response.data?.length) {
-    const guests = response.data;
-    console.log(guests)
-    familyName.value = guests[0].guest_family;
-    guestNames.value = guests.map(guest => guest.guest_name);
-  }
-
-
   loadPage.value = true
 });
 
@@ -61,7 +44,6 @@ onMounted(async () => {
     </main>
     <footer v-show="loadPage">
       <InvitationFooter />
-      <LastVerse />
     </footer>
     <Transition name="shrink">
       <div class="loader" v-if="!loadPage">
