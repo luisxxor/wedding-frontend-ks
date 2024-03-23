@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.15 61.36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5b0000;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Por_si" data-name="Por si">
+    <rect class="cls-2" x="1.5" y="6.68" width="33.78" height="53.18" rx="6.44" ry="6.44"/>
+    <rect class="cls-1" x="15.4" y="3.97" width="33.78" height="53.18" rx="6.44" ry="6.44" transform="translate(8.89 -7.24) rotate(14.82)"/>
+    <rect class="cls-2" x="28.77" y="3.97" width="33.78" height="53.18" rx="6.44" ry="6.44" transform="translate(23.21 -19.59) rotate(32.09)"/>
+  </g>
+</svg>

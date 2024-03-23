@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1264.32 556.7">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .72;
+      }
+
+      .cls-2 {
+        stroke: url(#linear-gradient-2);
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        stroke: url(#linear-gradient-4);
+      }
+
+      .cls-4 {
+        opacity: .8;
+        stroke: url(#linear-gradient);
+        stroke-width: 5px;
+      }
+
+      .cls-5 {
+        stroke: url(#linear-gradient-3);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="38.03" y1="267.84" x2="1211.22" y2="267.84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d78a8"/>
+      <stop offset=".08" stop-color="#368cbb"/>
+      <stop offset=".2" stop-color="#59a8d5"/>
+      <stop offset=".31" stop-color="#72bce8"/>
+      <stop offset=".42" stop-color="#81c8f4"/>
+      <stop offset=".5" stop-color="#87cdf8"/>
+      <stop offset=".62" stop-color="#80c9f6"/>
+      <stop offset=".77" stop-color="#6fc1f1"/>
+      <stop offset=".95" stop-color="#53b2e8"/>
+      <stop offset="1" stop-color="#4aaee6"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="69.72" y1="263.93" x2="1257.57" y2="263.93" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0" y1="292.77" x2="1187.85" y2="292.77" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="76.47" y1="278.34" x2="1264.32" y2="278.34" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Capa_6" data-name="Capa 6">
+    <g class="cls-1">
+      <ellipse class="cls-4" cx="624.62" cy="267.84" rx="584.09" ry="259.01"/>
+      <ellipse class="cls-2" cx="663.65" cy="263.93" rx="592.93" ry="262.93"/>
+      <ellipse class="cls-5" cx="593.93" cy="292.77" rx="592.93" ry="262.93"/>
+      <ellipse class="cls-3" cx="670.4" cy="278.34" rx="592.93" ry="262.93"/>
+    </g>
+  </g>
+</svg>
