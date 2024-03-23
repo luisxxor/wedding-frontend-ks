@@ -10,18 +10,6 @@
             :locationMap="location.locationMap"
         />
 
-        <div class="dressing-container">
-            <div class="dressing-icon-container">
-                <img :src="dressingIcon" alt="Vestimenta" />
-            </div>
-            <div class="dressing-title">
-                Vestimenta
-            </div>
-            <div class="dressing-text">
-                Formal / Semi-Formal
-            </div>
-        </div>
-
         <img :src="leaves1" id="leaves1">
         <img :src="leaves2" id="leaves2">
         <img :src="leaves3" id="leaves3">
@@ -43,8 +31,6 @@
 <script lang="ts" setup>
     import Location from './Location.vue';
     import churchIcon from '@/assets/svg/church-icon.svg';
-    import partyIcon from '@/assets/svg/party-icon.svg';
-    import dressingIcon from '@/assets/svg/dressing-icon.svg';
     import leaves1 from '@/assets/svg/leaves-1.svg';
     import leaves2 from '@/assets/svg/leaves-2.svg';
     import leaves3 from '@/assets/svg/leaves-3.svg';
