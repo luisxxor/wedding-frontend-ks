@@ -77,10 +77,7 @@ if (vw.value < 600) {
     background = background800;
 }
 
-const height = computed(() => (props.statusBarHeight && props.statusBarHeight > 0) ? 
-    `calc(100vh + 3em - ${props.statusBarHeight}px)`
-    : 'calc(100vh - 2em)'
-);
+const height = 'auto';
 </script>
 
 <style scoped>

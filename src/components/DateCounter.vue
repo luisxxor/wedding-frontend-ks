@@ -51,7 +51,7 @@
 }
 
 .date-container {
-  padding: 0 3.5rem;
+  padding: 0;
   display: grid;
   grid-template-columns: 1fr 4rem 1fr; /* defines 3 columns, with the 2nd column slightly wider than the others */
   grid-template-rows: auto 1fr; /* defines 2 rows, with the 2nd row taking up remaining space */
@@ -76,7 +76,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(2px 3px 3px rgb(0 0 0 / 0.9));
-  font-size: 4em;
+  font-size: 3em;
   font-family: 'Alkatra', cursive;
 }
 
@@ -148,6 +148,10 @@
 @media (min-width:768px){
     .counter-container {
         height: 100px;
+    }
+
+    .day {
+        font-size: 4em;
     }
 
     .dateComponent-text {
